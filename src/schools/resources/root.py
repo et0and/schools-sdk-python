@@ -26,7 +26,7 @@ class RootResource(SyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/schools-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/et0and/schools-sdk-python#accessing-raw-response-data-eg-headers
         """
         return RootResourceWithRawResponse(self)
 
@@ -35,7 +35,7 @@ class RootResource(SyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/schools-python#with_streaming_response
+        For more information, see https://www.github.com/et0and/schools-sdk-python#with_streaming_response
         """
         return RootResourceWithStreamingResponse(self)
 
@@ -66,7 +66,7 @@ class AsyncRootResource(AsyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/schools-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/et0and/schools-sdk-python#accessing-raw-response-data-eg-headers
         """
         return AsyncRootResourceWithRawResponse(self)
 
@@ -75,7 +75,7 @@ class AsyncRootResource(AsyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/schools-python#with_streaming_response
+        For more information, see https://www.github.com/et0and/schools-sdk-python#with_streaming_response
         """
         return AsyncRootResourceWithStreamingResponse(self)
 
