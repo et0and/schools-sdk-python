@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.3 (2025-11-22)
+
+Full Changelog: [v0.1.2...v0.1.3](https://github.com/et0and/schools-sdk-python/compare/v0.1.2...v0.1.3)
+
+### Bug Fixes
+
+* compat with Python 3.14 ([c808edf](https://github.com/et0and/schools-sdk-python/commit/c808edf7d22cd29098f8c81b35b7187e4242fe13))
+* **compat:** update signatures of `model_dump` and `model_dump_json` for Pydantic v1 ([c78202e](https://github.com/et0and/schools-sdk-python/commit/c78202e38c569f832de2420791b2f63c55765873))
+
+
+### Chores
+
+* add Python 3.14 classifier and testing ([c91fd4a](https://github.com/et0and/schools-sdk-python/commit/c91fd4a0a6a8311a1405a24d180e62f09f2e1dbf))
+* **package:** drop Python 3.8 support ([71ae8c2](https://github.com/et0and/schools-sdk-python/commit/71ae8c26b917bcbeb244382c7e8f0833a0742c7c))
+
 ## 0.1.2 (2025-11-04)
 
 Full Changelog: [v0.1.1...v0.1.2](https://github.com/et0and/schools-sdk-python/compare/v0.1.1...v0.1.2)
