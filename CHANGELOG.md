@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.4 (2025-12-03)
+
+Full Changelog: [v0.1.3...v0.1.4](https://github.com/et0and/schools-sdk-python/compare/v0.1.3...v0.1.4)
+
+### Bug Fixes
+
+* ensure streams are always closed ([4a636b0](https://github.com/et0and/schools-sdk-python/commit/4a636b04eaf667f6e92a60515379f2af636495d3))
+
+
+### Chores
+
+* **deps:** mypy 1.18.1 has a regression, pin to 1.17 ([d2a6052](https://github.com/et0and/schools-sdk-python/commit/d2a60529290a6aec3ec330b485b75693664a108e))
+* **docs:** use environment variables for authentication in code snippets ([4ad844e](https://github.com/et0and/schools-sdk-python/commit/4ad844ed51c139f70ed4ff2f6e76ed8e0c28b3e1))
+* update lockfile ([60dff69](https://github.com/et0and/schools-sdk-python/commit/60dff690c733085e0fbac043e795dde94a538547))
+
 ## 0.1.3 (2025-11-22)
 
 Full Changelog: [v0.1.2...v0.1.3](https://github.com/et0and/schools-sdk-python/compare/v0.1.2...v0.1.3)
