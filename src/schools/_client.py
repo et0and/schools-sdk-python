@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import os
-from typing import Any, Dict, Mapping, cast
+from typing import TYPE_CHECKING, Any, Dict, Mapping, cast
 from typing_extensions import Self, Literal, override
 
 import httpx
@@ -21,8 +21,8 @@ from ._types import (
     not_given,
 )
 from ._utils import is_given, get_async_library
+from ._compat import cached_property
 from ._version import __version__
-from .resources import root, sync, health, schools
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import APIStatusError
 from ._base_client import (
@@ -30,6 +30,13 @@ from ._base_client import (
     SyncAPIClient,
     AsyncAPIClient,
 )
+
+if TYPE_CHECKING:
+    from .resources import root, sync, health, schools
+    from .resources.root import RootResource, AsyncRootResource
+    from .resources.sync import SyncResource, AsyncSyncResource
+    from .resources.health import HealthResource, AsyncHealthResource
+    from .resources.schools import SchoolsResource, AsyncSchoolsResource
 
 __all__ = [
     "ENVIRONMENTS",
@@ -50,13 +57,6 @@ ENVIRONMENTS: Dict[str, str] = {
 
 
 class Schools(SyncAPIClient):
-    health: health.HealthResource
-    root: root.RootResource
-    schools: schools.SchoolsResource
-    sync: sync.SyncResource
-    with_raw_response: SchoolsWithRawResponse
-    with_streaming_response: SchoolsWithStreamedResponse
-
     # client options
     api_key: str | None
 
@@ -131,12 +131,37 @@ class Schools(SyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.health = health.HealthResource(self)
-        self.root = root.RootResource(self)
-        self.schools = schools.SchoolsResource(self)
-        self.sync = sync.SyncResource(self)
-        self.with_raw_response = SchoolsWithRawResponse(self)
-        self.with_streaming_response = SchoolsWithStreamedResponse(self)
+    @cached_property
+    def health(self) -> HealthResource:
+        from .resources.health import HealthResource
+
+        return HealthResource(self)
+
+    @cached_property
+    def root(self) -> RootResource:
+        from .resources.root import RootResource
+
+        return RootResource(self)
+
+    @cached_property
+    def schools(self) -> SchoolsResource:
+        from .resources.schools import SchoolsResource
+
+        return SchoolsResource(self)
+
+    @cached_property
+    def sync(self) -> SyncResource:
+        from .resources.sync import SyncResource
+
+        return SyncResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> SchoolsWithRawResponse:
+        return SchoolsWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> SchoolsWithStreamedResponse:
+        return SchoolsWithStreamedResponse(self)
 
     @property
     @override
@@ -259,13 +284,6 @@ class Schools(SyncAPIClient):
 
 
 class AsyncSchools(AsyncAPIClient):
-    health: health.AsyncHealthResource
-    root: root.AsyncRootResource
-    schools: schools.AsyncSchoolsResource
-    sync: sync.AsyncSyncResource
-    with_raw_response: AsyncSchoolsWithRawResponse
-    with_streaming_response: AsyncSchoolsWithStreamedResponse
-
     # client options
     api_key: str | None
 
@@ -340,12 +358,37 @@ class AsyncSchools(AsyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.health = health.AsyncHealthResource(self)
-        self.root = root.AsyncRootResource(self)
-        self.schools = schools.AsyncSchoolsResource(self)
-        self.sync = sync.AsyncSyncResource(self)
-        self.with_raw_response = AsyncSchoolsWithRawResponse(self)
-        self.with_streaming_response = AsyncSchoolsWithStreamedResponse(self)
+    @cached_property
+    def health(self) -> AsyncHealthResource:
+        from .resources.health import AsyncHealthResource
+
+        return AsyncHealthResource(self)
+
+    @cached_property
+    def root(self) -> AsyncRootResource:
+        from .resources.root import AsyncRootResource
+
+        return AsyncRootResource(self)
+
+    @cached_property
+    def schools(self) -> AsyncSchoolsResource:
+        from .resources.schools import AsyncSchoolsResource
+
+        return AsyncSchoolsResource(self)
+
+    @cached_property
+    def sync(self) -> AsyncSyncResource:
+        from .resources.sync import AsyncSyncResource
+
+        return AsyncSyncResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> AsyncSchoolsWithRawResponse:
+        return AsyncSchoolsWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> AsyncSchoolsWithStreamedResponse:
+        return AsyncSchoolsWithStreamedResponse(self)
 
     @property
     @override
@@ -468,35 +511,127 @@ class AsyncSchools(AsyncAPIClient):
 
 
 class SchoolsWithRawResponse:
+    _client: Schools
+
     def __init__(self, client: Schools) -> None:
-        self.health = health.HealthResourceWithRawResponse(client.health)
-        self.root = root.RootResourceWithRawResponse(client.root)
-        self.schools = schools.SchoolsResourceWithRawResponse(client.schools)
-        self.sync = sync.SyncResourceWithRawResponse(client.sync)
+        self._client = client
+
+    @cached_property
+    def health(self) -> health.HealthResourceWithRawResponse:
+        from .resources.health import HealthResourceWithRawResponse
+
+        return HealthResourceWithRawResponse(self._client.health)
+
+    @cached_property
+    def root(self) -> root.RootResourceWithRawResponse:
+        from .resources.root import RootResourceWithRawResponse
+
+        return RootResourceWithRawResponse(self._client.root)
+
+    @cached_property
+    def schools(self) -> schools.SchoolsResourceWithRawResponse:
+        from .resources.schools import SchoolsResourceWithRawResponse
+
+        return SchoolsResourceWithRawResponse(self._client.schools)
+
+    @cached_property
+    def sync(self) -> sync.SyncResourceWithRawResponse:
+        from .resources.sync import SyncResourceWithRawResponse
+
+        return SyncResourceWithRawResponse(self._client.sync)
 
 
 class AsyncSchoolsWithRawResponse:
+    _client: AsyncSchools
+
     def __init__(self, client: AsyncSchools) -> None:
-        self.health = health.AsyncHealthResourceWithRawResponse(client.health)
-        self.root = root.AsyncRootResourceWithRawResponse(client.root)
-        self.schools = schools.AsyncSchoolsResourceWithRawResponse(client.schools)
-        self.sync = sync.AsyncSyncResourceWithRawResponse(client.sync)
+        self._client = client
+
+    @cached_property
+    def health(self) -> health.AsyncHealthResourceWithRawResponse:
+        from .resources.health import AsyncHealthResourceWithRawResponse
+
+        return AsyncHealthResourceWithRawResponse(self._client.health)
+
+    @cached_property
+    def root(self) -> root.AsyncRootResourceWithRawResponse:
+        from .resources.root import AsyncRootResourceWithRawResponse
+
+        return AsyncRootResourceWithRawResponse(self._client.root)
+
+    @cached_property
+    def schools(self) -> schools.AsyncSchoolsResourceWithRawResponse:
+        from .resources.schools import AsyncSchoolsResourceWithRawResponse
+
+        return AsyncSchoolsResourceWithRawResponse(self._client.schools)
+
+    @cached_property
+    def sync(self) -> sync.AsyncSyncResourceWithRawResponse:
+        from .resources.sync import AsyncSyncResourceWithRawResponse
+
+        return AsyncSyncResourceWithRawResponse(self._client.sync)
 
 
 class SchoolsWithStreamedResponse:
+    _client: Schools
+
     def __init__(self, client: Schools) -> None:
-        self.health = health.HealthResourceWithStreamingResponse(client.health)
-        self.root = root.RootResourceWithStreamingResponse(client.root)
-        self.schools = schools.SchoolsResourceWithStreamingResponse(client.schools)
-        self.sync = sync.SyncResourceWithStreamingResponse(client.sync)
+        self._client = client
+
+    @cached_property
+    def health(self) -> health.HealthResourceWithStreamingResponse:
+        from .resources.health import HealthResourceWithStreamingResponse
+
+        return HealthResourceWithStreamingResponse(self._client.health)
+
+    @cached_property
+    def root(self) -> root.RootResourceWithStreamingResponse:
+        from .resources.root import RootResourceWithStreamingResponse
+
+        return RootResourceWithStreamingResponse(self._client.root)
+
+    @cached_property
+    def schools(self) -> schools.SchoolsResourceWithStreamingResponse:
+        from .resources.schools import SchoolsResourceWithStreamingResponse
+
+        return SchoolsResourceWithStreamingResponse(self._client.schools)
+
+    @cached_property
+    def sync(self) -> sync.SyncResourceWithStreamingResponse:
+        from .resources.sync import SyncResourceWithStreamingResponse
+
+        return SyncResourceWithStreamingResponse(self._client.sync)
 
 
 class AsyncSchoolsWithStreamedResponse:
+    _client: AsyncSchools
+
     def __init__(self, client: AsyncSchools) -> None:
-        self.health = health.AsyncHealthResourceWithStreamingResponse(client.health)
-        self.root = root.AsyncRootResourceWithStreamingResponse(client.root)
-        self.schools = schools.AsyncSchoolsResourceWithStreamingResponse(client.schools)
-        self.sync = sync.AsyncSyncResourceWithStreamingResponse(client.sync)
+        self._client = client
+
+    @cached_property
+    def health(self) -> health.AsyncHealthResourceWithStreamingResponse:
+        from .resources.health import AsyncHealthResourceWithStreamingResponse
+
+        return AsyncHealthResourceWithStreamingResponse(self._client.health)
+
+    @cached_property
+    def root(self) -> root.AsyncRootResourceWithStreamingResponse:
+        from .resources.root import AsyncRootResourceWithStreamingResponse
+
+        return AsyncRootResourceWithStreamingResponse(self._client.root)
+
+    @cached_property
+    def schools(self) -> schools.AsyncSchoolsResourceWithStreamingResponse:
+        from .resources.schools import AsyncSchoolsResourceWithStreamingResponse
+
+        return AsyncSchoolsResourceWithStreamingResponse(self._client.schools)
+
+    @cached_property
+    def sync(self) -> sync.AsyncSyncResourceWithStreamingResponse:
+        from .resources.sync import AsyncSyncResourceWithStreamingResponse
+
+        return AsyncSyncResourceWithStreamingResponse(self._client.sync)
 
 
 Client = Schools
