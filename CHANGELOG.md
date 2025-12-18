@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.5 (2025-12-18)
+
+Full Changelog: [v0.1.4...v0.1.5](https://github.com/et0and/schools-sdk-python/compare/v0.1.4...v0.1.5)
+
+### Bug Fixes
+
+* **types:** allow pyright to infer TypedDict types within SequenceNotStr ([e1cc8f4](https://github.com/et0and/schools-sdk-python/commit/e1cc8f40ae0428536c274a8d9be5cb302a52c697))
+* use async_to_httpx_files in patch method ([b5ca638](https://github.com/et0and/schools-sdk-python/commit/b5ca638f87291a9fa917bf47eb94d86953d677d2))
+
+
+### Chores
+
+* **internal:** add missing files argument to base client ([142e32c](https://github.com/et0and/schools-sdk-python/commit/142e32cf983b28ecc2e48466e7acd25b59b94e9a))
+* speedup initial import ([187b5ab](https://github.com/et0and/schools-sdk-python/commit/187b5ab3637a18f7ec0ad769e1ed76b6eba1fa8f))
+
 ## 0.1.4 (2025-12-03)
 
 Full Changelog: [v0.1.3...v0.1.4](https://github.com/et0and/schools-sdk-python/compare/v0.1.3...v0.1.4)
