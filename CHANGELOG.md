@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.6 (2025-12-19)
+
+Full Changelog: [v0.1.5...v0.1.6](https://github.com/et0and/schools-sdk-python/compare/v0.1.5...v0.1.6)
+
+### Chores
+
+* **internal:** add `--fix` argument to lint script ([90d1b77](https://github.com/et0and/schools-sdk-python/commit/90d1b7722d9a8bbc54121112a4e083075203819e))
+
 ## 0.1.5 (2025-12-18)
 
 Full Changelog: [v0.1.4...v0.1.5](https://github.com/et0and/schools-sdk-python/compare/v0.1.4...v0.1.5)
