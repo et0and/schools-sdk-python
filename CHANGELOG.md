@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.2.0 (2026-01-29)
+
+Full Changelog: [v0.1.6...v0.2.0](https://github.com/et0and/schools-sdk-python/compare/v0.1.6...v0.2.0)
+
+### Features
+
+* **client:** add support for binary request streaming ([4b6922e](https://github.com/et0and/schools-sdk-python/commit/4b6922e4ee9e8639f548ab3bf3346ee9effdcd98))
+
+
+### Bug Fixes
+
+* **client:** loosen auth header validation ([49eb039](https://github.com/et0and/schools-sdk-python/commit/49eb03920d3a4514f8f2184e8512fdec170544de))
+* **docs:** fix mcp installation instructions for remote servers ([3fdac9d](https://github.com/et0and/schools-sdk-python/commit/3fdac9d05a1e067763ff50d0fe0f0f9f01abeb39))
+
+
+### Chores
+
+* **ci:** upgrade `actions/github-script` ([1d74fca](https://github.com/et0and/schools-sdk-python/commit/1d74fca925ab212efe0217b327dd84b26844ffa1))
+* **internal:** update `actions/checkout` version ([3f50e80](https://github.com/et0and/schools-sdk-python/commit/3f50e807ee7db300d7e5419cb26cc6b5d3dcdc19))
+
+
+### Documentation
+
+* prominently feature MCP server setup in root SDK readmes ([2304058](https://github.com/et0and/schools-sdk-python/commit/2304058f312fb8f618f6cec3950b6c27b6339e69))
+
 ## 0.1.6 (2025-12-19)
 
 Full Changelog: [v0.1.5...v0.1.6](https://github.com/et0and/schools-sdk-python/compare/v0.1.5...v0.1.6)
