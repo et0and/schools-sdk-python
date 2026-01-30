@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1 (2026-01-30)
+
+Full Changelog: [v0.2.0...v0.2.1](https://github.com/et0and/schools-sdk-python/compare/v0.2.0...v0.2.1)
+
+### Chores
+
+* configure new SDK language ([3ec2a25](https://github.com/et0and/schools-sdk-python/commit/3ec2a25ab514463373ddb1472e799d5a0afe5fe7))
+
 ## 0.2.0 (2026-01-29)
 
 Full Changelog: [v0.1.6...v0.2.0](https://github.com/et0and/schools-sdk-python/compare/v0.1.6...v0.2.0)
