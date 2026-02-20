@@ -21,7 +21,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestSchools:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: Schools) -> None:
         school = client.schools.retrieve(
@@ -29,7 +29,7 @@ class TestSchools:
         )
         assert_matches_type(SchoolRetrieveResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: Schools) -> None:
         response = client.schools.with_raw_response.retrieve(
@@ -41,7 +41,7 @@ class TestSchools:
         school = response.parse()
         assert_matches_type(SchoolRetrieveResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: Schools) -> None:
         with client.schools.with_streaming_response.retrieve(
@@ -55,7 +55,7 @@ class TestSchools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: Schools) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `school_id` but received ''"):
@@ -63,13 +63,13 @@ class TestSchools:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list(self, client: Schools) -> None:
         school = client.schools.list()
         assert_matches_type(SchoolListResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_with_all_params(self, client: Schools) -> None:
         school = client.schools.list(
@@ -84,7 +84,7 @@ class TestSchools:
         )
         assert_matches_type(SchoolListResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: Schools) -> None:
         response = client.schools.with_raw_response.list()
@@ -94,7 +94,7 @@ class TestSchools:
         school = response.parse()
         assert_matches_type(SchoolListResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: Schools) -> None:
         with client.schools.with_streaming_response.list() as response:
@@ -106,7 +106,7 @@ class TestSchools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_by_authority(self, client: Schools) -> None:
         school = client.schools.by_authority(
@@ -114,7 +114,7 @@ class TestSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_by_authority_with_all_params(self, client: Schools) -> None:
         school = client.schools.by_authority(
@@ -124,7 +124,7 @@ class TestSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_by_authority(self, client: Schools) -> None:
         response = client.schools.with_raw_response.by_authority(
@@ -136,7 +136,7 @@ class TestSchools:
         school = response.parse()
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_by_authority(self, client: Schools) -> None:
         with client.schools.with_streaming_response.by_authority(
@@ -150,7 +150,7 @@ class TestSchools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_by_authority(self, client: Schools) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `authority` but received ''"):
@@ -158,7 +158,7 @@ class TestSchools:
                 authority="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_by_city(self, client: Schools) -> None:
         school = client.schools.by_city(
@@ -166,7 +166,7 @@ class TestSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_by_city_with_all_params(self, client: Schools) -> None:
         school = client.schools.by_city(
@@ -176,7 +176,7 @@ class TestSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_by_city(self, client: Schools) -> None:
         response = client.schools.with_raw_response.by_city(
@@ -188,7 +188,7 @@ class TestSchools:
         school = response.parse()
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_by_city(self, client: Schools) -> None:
         with client.schools.with_streaming_response.by_city(
@@ -202,7 +202,7 @@ class TestSchools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_by_city(self, client: Schools) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `city` but received ''"):
@@ -210,7 +210,7 @@ class TestSchools:
                 city="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_by_status(self, client: Schools) -> None:
         school = client.schools.by_status(
@@ -218,7 +218,7 @@ class TestSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_by_status_with_all_params(self, client: Schools) -> None:
         school = client.schools.by_status(
@@ -228,7 +228,7 @@ class TestSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_by_status(self, client: Schools) -> None:
         response = client.schools.with_raw_response.by_status(
@@ -240,7 +240,7 @@ class TestSchools:
         school = response.parse()
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_by_status(self, client: Schools) -> None:
         with client.schools.with_streaming_response.by_status(
@@ -254,7 +254,7 @@ class TestSchools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_by_status(self, client: Schools) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `status` but received ''"):
@@ -262,7 +262,7 @@ class TestSchools:
                 status="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_by_suburb(self, client: Schools) -> None:
         school = client.schools.by_suburb(
@@ -270,7 +270,7 @@ class TestSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_by_suburb_with_all_params(self, client: Schools) -> None:
         school = client.schools.by_suburb(
@@ -280,7 +280,7 @@ class TestSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_by_suburb(self, client: Schools) -> None:
         response = client.schools.with_raw_response.by_suburb(
@@ -292,7 +292,7 @@ class TestSchools:
         school = response.parse()
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_by_suburb(self, client: Schools) -> None:
         with client.schools.with_streaming_response.by_suburb(
@@ -306,7 +306,7 @@ class TestSchools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_by_suburb(self, client: Schools) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `suburb` but received ''"):
@@ -314,7 +314,7 @@ class TestSchools:
                 suburb="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_search(self, client: Schools) -> None:
         school = client.schools.search(
@@ -322,7 +322,7 @@ class TestSchools:
         )
         assert_matches_type(SchoolSearchResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_search_with_all_params(self, client: Schools) -> None:
         school = client.schools.search(
@@ -332,7 +332,7 @@ class TestSchools:
         )
         assert_matches_type(SchoolSearchResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_search(self, client: Schools) -> None:
         response = client.schools.with_raw_response.search(
@@ -344,7 +344,7 @@ class TestSchools:
         school = response.parse()
         assert_matches_type(SchoolSearchResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_search(self, client: Schools) -> None:
         with client.schools.with_streaming_response.search(
@@ -364,7 +364,7 @@ class TestAsyncSchools:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncSchools) -> None:
         school = await async_client.schools.retrieve(
@@ -372,7 +372,7 @@ class TestAsyncSchools:
         )
         assert_matches_type(SchoolRetrieveResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncSchools) -> None:
         response = await async_client.schools.with_raw_response.retrieve(
@@ -384,7 +384,7 @@ class TestAsyncSchools:
         school = await response.parse()
         assert_matches_type(SchoolRetrieveResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncSchools) -> None:
         async with async_client.schools.with_streaming_response.retrieve(
@@ -398,7 +398,7 @@ class TestAsyncSchools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncSchools) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `school_id` but received ''"):
@@ -406,13 +406,13 @@ class TestAsyncSchools:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncSchools) -> None:
         school = await async_client.schools.list()
         assert_matches_type(SchoolListResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncSchools) -> None:
         school = await async_client.schools.list(
@@ -427,7 +427,7 @@ class TestAsyncSchools:
         )
         assert_matches_type(SchoolListResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncSchools) -> None:
         response = await async_client.schools.with_raw_response.list()
@@ -437,7 +437,7 @@ class TestAsyncSchools:
         school = await response.parse()
         assert_matches_type(SchoolListResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncSchools) -> None:
         async with async_client.schools.with_streaming_response.list() as response:
@@ -449,7 +449,7 @@ class TestAsyncSchools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_by_authority(self, async_client: AsyncSchools) -> None:
         school = await async_client.schools.by_authority(
@@ -457,7 +457,7 @@ class TestAsyncSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_by_authority_with_all_params(self, async_client: AsyncSchools) -> None:
         school = await async_client.schools.by_authority(
@@ -467,7 +467,7 @@ class TestAsyncSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_by_authority(self, async_client: AsyncSchools) -> None:
         response = await async_client.schools.with_raw_response.by_authority(
@@ -479,7 +479,7 @@ class TestAsyncSchools:
         school = await response.parse()
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_by_authority(self, async_client: AsyncSchools) -> None:
         async with async_client.schools.with_streaming_response.by_authority(
@@ -493,7 +493,7 @@ class TestAsyncSchools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_by_authority(self, async_client: AsyncSchools) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `authority` but received ''"):
@@ -501,7 +501,7 @@ class TestAsyncSchools:
                 authority="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_by_city(self, async_client: AsyncSchools) -> None:
         school = await async_client.schools.by_city(
@@ -509,7 +509,7 @@ class TestAsyncSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_by_city_with_all_params(self, async_client: AsyncSchools) -> None:
         school = await async_client.schools.by_city(
@@ -519,7 +519,7 @@ class TestAsyncSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_by_city(self, async_client: AsyncSchools) -> None:
         response = await async_client.schools.with_raw_response.by_city(
@@ -531,7 +531,7 @@ class TestAsyncSchools:
         school = await response.parse()
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_by_city(self, async_client: AsyncSchools) -> None:
         async with async_client.schools.with_streaming_response.by_city(
@@ -545,7 +545,7 @@ class TestAsyncSchools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_by_city(self, async_client: AsyncSchools) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `city` but received ''"):
@@ -553,7 +553,7 @@ class TestAsyncSchools:
                 city="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_by_status(self, async_client: AsyncSchools) -> None:
         school = await async_client.schools.by_status(
@@ -561,7 +561,7 @@ class TestAsyncSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_by_status_with_all_params(self, async_client: AsyncSchools) -> None:
         school = await async_client.schools.by_status(
@@ -571,7 +571,7 @@ class TestAsyncSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_by_status(self, async_client: AsyncSchools) -> None:
         response = await async_client.schools.with_raw_response.by_status(
@@ -583,7 +583,7 @@ class TestAsyncSchools:
         school = await response.parse()
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_by_status(self, async_client: AsyncSchools) -> None:
         async with async_client.schools.with_streaming_response.by_status(
@@ -597,7 +597,7 @@ class TestAsyncSchools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_by_status(self, async_client: AsyncSchools) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `status` but received ''"):
@@ -605,7 +605,7 @@ class TestAsyncSchools:
                 status="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_by_suburb(self, async_client: AsyncSchools) -> None:
         school = await async_client.schools.by_suburb(
@@ -613,7 +613,7 @@ class TestAsyncSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_by_suburb_with_all_params(self, async_client: AsyncSchools) -> None:
         school = await async_client.schools.by_suburb(
@@ -623,7 +623,7 @@ class TestAsyncSchools:
         )
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_by_suburb(self, async_client: AsyncSchools) -> None:
         response = await async_client.schools.with_raw_response.by_suburb(
@@ -635,7 +635,7 @@ class TestAsyncSchools:
         school = await response.parse()
         assert school is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_by_suburb(self, async_client: AsyncSchools) -> None:
         async with async_client.schools.with_streaming_response.by_suburb(
@@ -649,7 +649,7 @@ class TestAsyncSchools:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_by_suburb(self, async_client: AsyncSchools) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `suburb` but received ''"):
@@ -657,7 +657,7 @@ class TestAsyncSchools:
                 suburb="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_search(self, async_client: AsyncSchools) -> None:
         school = await async_client.schools.search(
@@ -665,7 +665,7 @@ class TestAsyncSchools:
         )
         assert_matches_type(SchoolSearchResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_search_with_all_params(self, async_client: AsyncSchools) -> None:
         school = await async_client.schools.search(
@@ -675,7 +675,7 @@ class TestAsyncSchools:
         )
         assert_matches_type(SchoolSearchResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_search(self, async_client: AsyncSchools) -> None:
         response = await async_client.schools.with_raw_response.search(
@@ -687,7 +687,7 @@ class TestAsyncSchools:
         school = await response.parse()
         assert_matches_type(SchoolSearchResponse, school, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_search(self, async_client: AsyncSchools) -> None:
         async with async_client.schools.with_streaming_response.search(
