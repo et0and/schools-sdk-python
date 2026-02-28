@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.3.0 (2026-02-25)
+
+Full Changelog: [v0.2.1...v0.3.0](https://github.com/et0and/schools-sdk-python/compare/v0.2.1...v0.3.0)
+
+### Features
+
+* **client:** add custom JSON encoder for extended type support ([1c95c8c](https://github.com/et0and/schools-sdk-python/commit/1c95c8c48cb2bc7d33adb5e5017fc69332ac332f))
+
+
+### Chores
+
+* format all `api.md` files ([b912528](https://github.com/et0and/schools-sdk-python/commit/b912528388e13d1a111999157f97a00d5e27ece0))
+* **internal:** add request options to SSE classes ([4d7cdd3](https://github.com/et0and/schools-sdk-python/commit/4d7cdd3254474b235479758e40ff26e01356f304))
+* **internal:** bump dependencies ([37cfe46](https://github.com/et0and/schools-sdk-python/commit/37cfe46510ba1dd7c02f85720daeb21fb8459dd0))
+* **internal:** fix lint error on Python 3.14 ([b0be636](https://github.com/et0and/schools-sdk-python/commit/b0be636fc6d8a35c70b964ad0d481a38da8f7dc0))
+* **internal:** make `test_proxy_environment_variables` more resilient ([b195f2b](https://github.com/et0and/schools-sdk-python/commit/b195f2bf95bd67a219bb1ffc2bbfcae40757c48c))
+* **internal:** make `test_proxy_environment_variables` more resilient to env ([708b3c7](https://github.com/et0and/schools-sdk-python/commit/708b3c72e405f458e15768584b3abb40b1130119))
+* **internal:** remove mock server code ([efea9aa](https://github.com/et0and/schools-sdk-python/commit/efea9aa56e0bc4efa92a486735acabc083a125b7))
+* update mock server docs ([b22f202](https://github.com/et0and/schools-sdk-python/commit/b22f202fdd4d86e2eb6c15b29d003dde85978b89))
+
 ## 0.2.1 (2026-01-30)
 
 Full Changelog: [v0.2.0...v0.2.1](https://github.com/et0and/schools-sdk-python/compare/v0.2.0...v0.2.1)
