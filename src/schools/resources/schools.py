@@ -31,6 +31,8 @@ __all__ = ["SchoolsResource", "AsyncSchoolsResource"]
 
 
 class SchoolsResource(SyncAPIResource):
+    """School data retrieval operations"""
+
     @cached_property
     def with_raw_response(self) -> SchoolsResourceWithRawResponse:
         """
@@ -389,6 +391,8 @@ class SchoolsResource(SyncAPIResource):
 
 
 class AsyncSchoolsResource(AsyncAPIResource):
+    """School data retrieval operations"""
+
     @cached_property
     def with_raw_response(self) -> AsyncSchoolsResourceWithRawResponse:
         """
