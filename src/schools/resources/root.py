@@ -20,6 +20,8 @@ __all__ = ["RootResource", "AsyncRootResource"]
 
 
 class RootResource(SyncAPIResource):
+    """API health and status"""
+
     @cached_property
     def with_raw_response(self) -> RootResourceWithRawResponse:
         """
@@ -60,6 +62,8 @@ class RootResource(SyncAPIResource):
 
 
 class AsyncRootResource(AsyncAPIResource):
+    """API health and status"""
+
     @cached_property
     def with_raw_response(self) -> AsyncRootResourceWithRawResponse:
         """

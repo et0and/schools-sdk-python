@@ -21,6 +21,8 @@ __all__ = ["SyncResource", "AsyncSyncResource"]
 
 
 class SyncResource(SyncAPIResource):
+    """Data sync operations"""
+
     @cached_property
     def with_raw_response(self) -> SyncResourceWithRawResponse:
         """
@@ -80,6 +82,8 @@ class SyncResource(SyncAPIResource):
 
 
 class AsyncSyncResource(AsyncAPIResource):
+    """Data sync operations"""
+
     @cached_property
     def with_raw_response(self) -> AsyncSyncResourceWithRawResponse:
         """
