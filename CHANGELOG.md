@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.3.1 (2026-03-17)
+
+Full Changelog: [v0.3.0...v0.3.1](https://github.com/et0and/schools-sdk-python/compare/v0.3.0...v0.3.1)
+
+### Bug Fixes
+
+* **deps:** bump minimum typing-extensions version ([a5f393c](https://github.com/et0and/schools-sdk-python/commit/a5f393cb44be8b8b92eed92e665dfd2394cdaf1c))
+* **pydantic:** do not pass `by_alias` unless set ([2cc6f3b](https://github.com/et0and/schools-sdk-python/commit/2cc6f3b8db044f574bb444e878d4fbc9fa9acb06))
+
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([0cc645f](https://github.com/et0and/schools-sdk-python/commit/0cc645f012791cf08b822682479d5b741a31cf7f))
+* **internal:** codegen related update ([16c7bdd](https://github.com/et0and/schools-sdk-python/commit/16c7bddf49d003c22b4859a963c2ac84318c8303))
+* **internal:** tweak CI branches ([6c9eb70](https://github.com/et0and/schools-sdk-python/commit/6c9eb70a72a3a2d371965aedf71433ef54132cde))
+
 ## 0.3.0 (2026-02-25)
 
 Full Changelog: [v0.2.1...v0.3.0](https://github.com/et0and/schools-sdk-python/compare/v0.2.1...v0.3.0)
