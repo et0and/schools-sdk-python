@@ -133,24 +133,28 @@ class Schools(SyncAPIClient):
 
     @cached_property
     def health(self) -> HealthResource:
+        """API health and status"""
         from .resources.health import HealthResource
 
         return HealthResource(self)
 
     @cached_property
     def root(self) -> RootResource:
+        """API health and status"""
         from .resources.root import RootResource
 
         return RootResource(self)
 
     @cached_property
     def schools(self) -> SchoolsResource:
+        """School data retrieval operations"""
         from .resources.schools import SchoolsResource
 
         return SchoolsResource(self)
 
     @cached_property
     def sync(self) -> SyncResource:
+        """Data sync operations"""
         from .resources.sync import SyncResource
 
         return SyncResource(self)
@@ -358,24 +362,28 @@ class AsyncSchools(AsyncAPIClient):
 
     @cached_property
     def health(self) -> AsyncHealthResource:
+        """API health and status"""
         from .resources.health import AsyncHealthResource
 
         return AsyncHealthResource(self)
 
     @cached_property
     def root(self) -> AsyncRootResource:
+        """API health and status"""
         from .resources.root import AsyncRootResource
 
         return AsyncRootResource(self)
 
     @cached_property
     def schools(self) -> AsyncSchoolsResource:
+        """School data retrieval operations"""
         from .resources.schools import AsyncSchoolsResource
 
         return AsyncSchoolsResource(self)
 
     @cached_property
     def sync(self) -> AsyncSyncResource:
+        """Data sync operations"""
         from .resources.sync import AsyncSyncResource
 
         return AsyncSyncResource(self)
@@ -514,24 +522,28 @@ class SchoolsWithRawResponse:
 
     @cached_property
     def health(self) -> health.HealthResourceWithRawResponse:
+        """API health and status"""
         from .resources.health import HealthResourceWithRawResponse
 
         return HealthResourceWithRawResponse(self._client.health)
 
     @cached_property
     def root(self) -> root.RootResourceWithRawResponse:
+        """API health and status"""
         from .resources.root import RootResourceWithRawResponse
 
         return RootResourceWithRawResponse(self._client.root)
 
     @cached_property
     def schools(self) -> schools.SchoolsResourceWithRawResponse:
+        """School data retrieval operations"""
         from .resources.schools import SchoolsResourceWithRawResponse
 
         return SchoolsResourceWithRawResponse(self._client.schools)
 
     @cached_property
     def sync(self) -> sync.SyncResourceWithRawResponse:
+        """Data sync operations"""
         from .resources.sync import SyncResourceWithRawResponse
 
         return SyncResourceWithRawResponse(self._client.sync)
@@ -545,24 +557,28 @@ class AsyncSchoolsWithRawResponse:
 
     @cached_property
     def health(self) -> health.AsyncHealthResourceWithRawResponse:
+        """API health and status"""
         from .resources.health import AsyncHealthResourceWithRawResponse
 
         return AsyncHealthResourceWithRawResponse(self._client.health)
 
     @cached_property
     def root(self) -> root.AsyncRootResourceWithRawResponse:
+        """API health and status"""
         from .resources.root import AsyncRootResourceWithRawResponse
 
         return AsyncRootResourceWithRawResponse(self._client.root)
 
     @cached_property
     def schools(self) -> schools.AsyncSchoolsResourceWithRawResponse:
+        """School data retrieval operations"""
         from .resources.schools import AsyncSchoolsResourceWithRawResponse
 
         return AsyncSchoolsResourceWithRawResponse(self._client.schools)
 
     @cached_property
     def sync(self) -> sync.AsyncSyncResourceWithRawResponse:
+        """Data sync operations"""
         from .resources.sync import AsyncSyncResourceWithRawResponse
 
         return AsyncSyncResourceWithRawResponse(self._client.sync)
@@ -576,24 +592,28 @@ class SchoolsWithStreamedResponse:
 
     @cached_property
     def health(self) -> health.HealthResourceWithStreamingResponse:
+        """API health and status"""
         from .resources.health import HealthResourceWithStreamingResponse
 
         return HealthResourceWithStreamingResponse(self._client.health)
 
     @cached_property
     def root(self) -> root.RootResourceWithStreamingResponse:
+        """API health and status"""
         from .resources.root import RootResourceWithStreamingResponse
 
         return RootResourceWithStreamingResponse(self._client.root)
 
     @cached_property
     def schools(self) -> schools.SchoolsResourceWithStreamingResponse:
+        """School data retrieval operations"""
         from .resources.schools import SchoolsResourceWithStreamingResponse
 
         return SchoolsResourceWithStreamingResponse(self._client.schools)
 
     @cached_property
     def sync(self) -> sync.SyncResourceWithStreamingResponse:
+        """Data sync operations"""
         from .resources.sync import SyncResourceWithStreamingResponse
 
         return SyncResourceWithStreamingResponse(self._client.sync)
@@ -607,24 +627,28 @@ class AsyncSchoolsWithStreamedResponse:
 
     @cached_property
     def health(self) -> health.AsyncHealthResourceWithStreamingResponse:
+        """API health and status"""
         from .resources.health import AsyncHealthResourceWithStreamingResponse
 
         return AsyncHealthResourceWithStreamingResponse(self._client.health)
 
     @cached_property
     def root(self) -> root.AsyncRootResourceWithStreamingResponse:
+        """API health and status"""
         from .resources.root import AsyncRootResourceWithStreamingResponse
 
         return AsyncRootResourceWithStreamingResponse(self._client.root)
 
     @cached_property
     def schools(self) -> schools.AsyncSchoolsResourceWithStreamingResponse:
+        """School data retrieval operations"""
         from .resources.schools import AsyncSchoolsResourceWithStreamingResponse
 
         return AsyncSchoolsResourceWithStreamingResponse(self._client.schools)
 
     @cached_property
     def sync(self) -> sync.AsyncSyncResourceWithStreamingResponse:
+        """Data sync operations"""
         from .resources.sync import AsyncSyncResourceWithStreamingResponse
 
         return AsyncSyncResourceWithStreamingResponse(self._client.sync)
