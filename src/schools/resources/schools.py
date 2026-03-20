@@ -13,7 +13,7 @@ from ..types import (
     school_by_authority_params,
 )
 from .._types import Body, Omit, Query, Headers, NoneType, NotGiven, omit, not_given
-from .._utils import maybe_transform, async_maybe_transform
+from .._utils import path_template, maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
 from .._response import (
@@ -78,7 +78,7 @@ class SchoolsResource(SyncAPIResource):
         if not school_id:
             raise ValueError(f"Expected a non-empty value for `school_id` but received {school_id!r}")
         return self._get(
-            f"/v1/schools/id/{school_id}",
+            path_template("/v1/schools/id/{school_id}", school_id=school_id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -184,7 +184,7 @@ class SchoolsResource(SyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `authority` but received {authority!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return self._get(
-            f"/v1/schools/authority/{authority}",
+            path_template("/v1/schools/authority/{authority}", authority=authority),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -230,7 +230,7 @@ class SchoolsResource(SyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `city` but received {city!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return self._get(
-            f"/v1/schools/city/{city}",
+            path_template("/v1/schools/city/{city}", city=city),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -276,7 +276,7 @@ class SchoolsResource(SyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `status` but received {status!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return self._get(
-            f"/v1/schools/status/{status}",
+            path_template("/v1/schools/status/{status}", status=status),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -322,7 +322,7 @@ class SchoolsResource(SyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `suburb` but received {suburb!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return self._get(
-            f"/v1/schools/suburb/{suburb}",
+            path_template("/v1/schools/suburb/{suburb}", suburb=suburb),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -438,7 +438,7 @@ class AsyncSchoolsResource(AsyncAPIResource):
         if not school_id:
             raise ValueError(f"Expected a non-empty value for `school_id` but received {school_id!r}")
         return await self._get(
-            f"/v1/schools/id/{school_id}",
+            path_template("/v1/schools/id/{school_id}", school_id=school_id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -544,7 +544,7 @@ class AsyncSchoolsResource(AsyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `authority` but received {authority!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return await self._get(
-            f"/v1/schools/authority/{authority}",
+            path_template("/v1/schools/authority/{authority}", authority=authority),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -590,7 +590,7 @@ class AsyncSchoolsResource(AsyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `city` but received {city!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return await self._get(
-            f"/v1/schools/city/{city}",
+            path_template("/v1/schools/city/{city}", city=city),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -636,7 +636,7 @@ class AsyncSchoolsResource(AsyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `status` but received {status!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return await self._get(
-            f"/v1/schools/status/{status}",
+            path_template("/v1/schools/status/{status}", status=status),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -682,7 +682,7 @@ class AsyncSchoolsResource(AsyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `suburb` but received {suburb!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return await self._get(
-            f"/v1/schools/suburb/{suburb}",
+            path_template("/v1/schools/suburb/{suburb}", suburb=suburb),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
