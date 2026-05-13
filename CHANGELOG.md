@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.4.0 (2026-05-13)
+
+Full Changelog: [v0.3.1...v0.4.0](https://github.com/et0and/schools-sdk-python/compare/v0.3.1...v0.4.0)
+
+### Features
+
+* **internal/types:** support eagerly validating pydantic iterators ([46fa22e](https://github.com/et0and/schools-sdk-python/commit/46fa22e72433fd21df94f0beafae9229a493e122))
+* **internal:** implement indices array format for query and form serialization ([2046eb2](https://github.com/et0and/schools-sdk-python/commit/2046eb23e27e58102aa46fc3f5db7044a1014a3b))
+* support setting headers via env ([0662fcc](https://github.com/et0and/schools-sdk-python/commit/0662fcc384b691d15fa54e1ac7b454a83b4720d5))
+
+
+### Bug Fixes
+
+* **client:** add missing f-string prefix in file type error message ([f6676fe](https://github.com/et0and/schools-sdk-python/commit/f6676fe9aaa03271fca508b4714f2dc54c7c4367))
+* **client:** preserve hardcoded query params when merging with user params ([d9dab79](https://github.com/et0and/schools-sdk-python/commit/d9dab7901213baed2e99a6560703192b76433da4))
+* ensure file data are only sent as 1 parameter ([81117a5](https://github.com/et0and/schools-sdk-python/commit/81117a5ea7e9f0eea2ff3d6f1b549df3b3507d07))
+* sanitize endpoint path params ([9347f27](https://github.com/et0and/schools-sdk-python/commit/9347f270837a6020287aeff891d33ec6c9e7b9a5))
+* use correct field name format for multipart file arrays ([475e50b](https://github.com/et0and/schools-sdk-python/commit/475e50b83de40e1324a5cf10404ee13a3f594d22))
+
+
+### Performance Improvements
+
+* **client:** optimize file structure copying in multipart requests ([c48dfa9](https://github.com/et0and/schools-sdk-python/commit/c48dfa9d862d6c9264fdc2821f75e1c1457c551f))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([e552d5b](https://github.com/et0and/schools-sdk-python/commit/e552d5b4cb2a79299493d2ee48762ff0b940394e))
+* **internal:** more robust bootstrap script ([6d9f384](https://github.com/et0and/schools-sdk-python/commit/6d9f384cd2aac4d84c1f137dbc3d3315923b8657))
+* **internal:** reformat pyproject.toml ([2b7e212](https://github.com/et0and/schools-sdk-python/commit/2b7e2128c2aba26454b65cabf4949b7b4d17fc04))
+* **internal:** update gitignore ([c5fe8ba](https://github.com/et0and/schools-sdk-python/commit/c5fe8bac5fbf9de9aece4d660b3becdb8d84f0dc))
+
 ## 0.3.1 (2026-03-17)
 
 Full Changelog: [v0.3.0...v0.3.1](https://github.com/et0and/schools-sdk-python/compare/v0.3.0...v0.3.1)
